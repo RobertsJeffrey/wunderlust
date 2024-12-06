@@ -203,7 +203,7 @@ h4 {
 
 #contact .form-required {
     font-size: 1.5rem;
-    font-family: "monsterrat";
+    font-family: "montserrat";
     font-variation-settings: "wght" 300, "ital" 1;
 }
 
@@ -241,7 +241,7 @@ input[type="radio"] {
 
 footer {
     background-color: var(--light-gray);
-    font-family: "monsterrat";
+    font-family: "montserrat";
 }
 
 footer a {
@@ -345,7 +345,6 @@ footer a {
         display: inline-block;
         margin-left: auto;
         padding-left: 10%;
-        padding-right: ;
         vertical-align: baseline;
         line-height: 2;
         padding-bottom: 1rem;
@@ -482,8 +481,7 @@ footer a {
     }
 
     .radio-input {
-        display: flex;
-        align-items: center;
+        display: inline-block;
         margin-bottom: 0.5rem;
 
     }
@@ -531,7 +529,7 @@ footer a {
 
 /*------------------------------Medium Screens--------------------- */
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
 
     nav {
         max-width: 85%;
@@ -579,12 +577,16 @@ footer a {
         justify-content: space-around;
     }
 
-    #menu-toggle ul li {
+    nav div ul li {
         display: flex;
         flex-direction: column;
         gap: 1rem;
         background-color: var(--white);
         width: 150px;
+    }
+
+    .active {
+        background-color: var(--yellow);
     }
 
     #menu-toggle ul li a {
@@ -621,7 +623,6 @@ footer a {
 
     #intro p {
         display: inline-block;
-        padding-right: ;
         vertical-align: baseline;
         line-height: 2;
         padding-bottom: 1rem;
@@ -650,7 +651,7 @@ footer a {
     }
 
     #plan h3 {
-        max-width: 85%;
+        padding-left: 15%;
         margin: auto;
         padding-top: 1rem;
         padding-bottom: 1rem;
@@ -692,35 +693,47 @@ footer a {
         padding-top: 50px;
     }
 
-    #testimonials {}
+    #testimonials {
 
-    #testimonials h3 {}
+        padding-bottom: 2rem;
+    }
+
+    #testimonials h3 {
+        padding-left: 15%;
+        padding-top: 2rem;
+        padding-bottom: 1.5rem;
+    }
 
     #testimonials div {
         display: grid;
         grid-template-columns: 1fr 1fr;
-
-
+        grid-template-rows: auto auto;
+        justify-self: center;
+        text-align: center;
+        max-width: 680px;
+        column-gap: 2rem;
+        row-gap: 1rem;
     }
 
-    #testimonials section:nth-of-type(2n + 1) {
-        display: grid;
-        align-self: start;
-    }
+
 
 
     #about h3 {
         padding-bottom: 1.5rem;
         padding-right: 4rem;
-        padding-left: 2rem;
+        padding-left: 15%;
         padding-top: 1rem;
     }
 
     #about div {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         justify-items: center;
         text-align: center;
+        line-height: 2;
+        padding-bottom: 1rem;
+        max-width: 680px;
+        margin: auto;
     }
 
     #about img {
@@ -733,7 +746,7 @@ footer a {
     }
 
     #contact {
-        max-width: 400px;
+        max-width: 85%;
         margin: 0 auto;
     }
 
@@ -753,6 +766,7 @@ footer a {
     input[type="tel"],
     select {
         width: 100%;
+        height: 75px;
         padding: 0.5rem;
         margin-bottom: 1rem;
         box-sizing: border-box;
@@ -780,14 +794,19 @@ footer a {
 
     .radio-input {
         display: flex;
-        align-items: center;
+        flex-direction: row;
         margin-bottom: 0.5rem;
 
     }
 
-    .radio-label {
-        margin-left: 0.5rem;
+    #nums fieldset {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 7rem;
+
     }
+
 
     .custom-select {
         position: relative;
@@ -801,7 +820,9 @@ footer a {
 
     #mySubmit {
         display: block;
-        width: 100%;
+        float: right;
+        width: 30%;
+        height: 75px;
         padding: 0.5rem;
         margin-top: 1rem;
         cursor: pointer;
@@ -813,22 +834,372 @@ footer a {
         width: 100%;
     }
 
-    footer p {
-        padding-top: 1rem;
-        padding-bottom: 2rem;
-        text-align: center;
+    footer {
+        margin-top: 125px;
+        padding: 40px;
+
+
     }
 
-    footer a {
-        display: flex;
-        justify-content: center;
-        line-height: 2;
+    footer p,
+    a {
+        max-width: 680px;
+        display: inline;
+        padding-left: 4rem;
+        font-family: "Montserrat";
+
     }
-
-
 
 }
 
-/*-------Large Screens--------*/
+/*-----------------------------Large Screens--------------------------*/
 
-@media screen and (min-width: 1200px) {}
+@media screen and (min-width: 1200px) {
+
+
+    nav {
+        display: inline;
+        float: right;
+        max-width: 85%;
+        margin: auto;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+
+    #menu-toggle {
+        position: relative;
+
+
+    }
+
+    .sr-only {
+        opacity: 0;
+    }
+
+    #menu-toggle input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+    }
+
+
+    #menu-toggle label {
+        visibility: hidden;
+    }
+
+    #menu-toggle ul {
+        position: relative;
+        top: -4rem;
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    nav div ul li {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        background-color: var(--white);
+        width: 150px;
+    }
+
+    .active {
+        background-color: var(--yellow);
+    }
+
+    #menu-toggle ul li a {
+        display: block;
+        padding: 10px;
+        color: var(--black);
+        text-align: center;
+        font-variation-settings: "wght" 700;
+    }
+
+    #menu-toggle input[type="checkbox"]:checked~ul {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    header h1 {
+        display: inline;
+
+    }
+
+    header p {
+        display: inline-block;
+        position: relative;
+        top: 2rem;
+        left: -18rem;
+        padding-left: 1rem;
+        padding-bottom: 2rem;
+    }
+
+
+    #intro {
+        display: flex;
+        max-width: 90%;
+
+
+    }
+
+    #intro h2 {
+        position: relative;
+        top: 7rem;
+        left: 9rem;
+    }
+
+    #intro p {
+        padding-top: 10rem;
+        display: block;
+    }
+
+    #img-grid {
+        position: relative;
+        top: 5rem;
+        left: 5rem;
+    }
+
+    #img-grid img,
+    #img-grid picture {
+        width: auto;
+        height: 40%;
+
+    }
+
+
+    #img-grid picture {}
+
+    #plan {
+        padding-bottom: 2rem;
+    }
+
+    #plan h3 {
+        padding-left: 15%;
+        margin: auto;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    #plan div {
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-self: center;
+        column-gap: .5rem;
+        row-gap: 1rem;
+
+
+
+    }
+
+    #plan section {
+        margin: 10px;
+        width: 400px;
+        height: 325px;
+
+
+    }
+
+    #plan section h4,
+    #plan section a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    #plan img {
+        width: 200px;
+        height: 200px;
+        padding-top: 50px;
+    }
+
+    #testimonials {
+        padding-bottom: 150px;
+        padding-top: 150px;
+    }
+
+    #testimonials h3 {
+        padding-left: 10%;
+        padding-bottom: 1.5rem;
+    }
+
+    #testimonials div {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        text-align: center;
+        padding: 4rem;
+    }
+
+    #testimonials q {
+        padding: 4rem;
+    }
+
+    #about {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    #about h3 {
+        padding-bottom: 1.5rem;
+        padding-right: 4rem;
+        padding-left: 10%;
+        padding-top: 1rem;
+    }
+
+    #about div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        justify-content: space-evenly;
+        line-height: 2;
+        padding-bottom: 1rem;
+    }
+
+    #about img {
+        width: 175px;
+        height: 175px;
+    }
+
+    #about section p {
+        padding-bottom: .5rem;
+    }
+
+    #contact {
+        max-width: 85%;
+        margin: 0 auto;
+    }
+
+    #contact h3 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select {
+        width: 100%;
+        height: 75px;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        box-sizing: border-box;
+    }
+
+    #names,
+    #nums,
+    #selects {
+        margin-bottom: 1.5rem;
+    }
+
+    #names {
+        position: relative;
+        top: 5rem;
+    }
+
+    #nums {
+        position: relative;
+        left: 35%;
+        top: -10rem;
+    }
+
+    #selects {
+        position: relative;
+        left: 70%;
+        top: -35rem;
+    }
+
+    fieldset {
+        margin-bottom: 1rem;
+        padding: 0;
+    }
+
+    legend {
+        margin-bottom: 0.5rem;
+    }
+
+    input[type="radio"] {
+        transform: scale(4);
+        margin: 1rem;
+    }
+
+    .radio-input {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 0.5rem;
+
+    }
+
+    #nums fieldset {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 7rem;
+
+    }
+
+
+    .custom-select {
+        position: relative;
+        margin-bottom: 1rem;
+    }
+
+    select {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    #mySubmit {
+        display: block;
+        float: right;
+        width: 30%;
+        height: 75px;
+        padding: 0.5rem;
+        margin-top: 1rem;
+        cursor: pointer;
+    }
+
+    #names,
+    #nums,
+    #selects {
+        width: 30%;
+    }
+
+    footer {
+        margin-top: 125px;
+        padding: 40px;
+
+
+    }
+
+    footer p,
+    a {
+
+        display: inline;
+        padding-left: 4rem;
+        font-family: "Montserrat";
+
+    }
+
+    footer a {
+        float: right;
+    }
+}
